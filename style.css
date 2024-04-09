@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+
+body {
+    background-image: url(images/dragonflight-background.jpg);
+}
+
+.metamorphous-regular {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Metamorphous", serif;
+    padding: 20px;
+    font-size: 38px;
+    color: goldenrod;
+    text-shadow: 2px 2px 1px rgb(92, 83, 74);
+}
+
+#game-board {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.letter-box {
+    border: 2px solid rgb(151, 150, 147);
+    border-radius: 3px;
+    margin: 2px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.filled-box {
+    border: 2px solid black;
+}
+
+.letter-row {
+    display: flex;
+}
+
+#keyboard-cont {
+    margin: 1rem 0;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#keyboard-cont div {
+    display: flex;
+}
+
+.second-row {
+    margin: 0.5rem 0;
+}
+
+.keyboard-button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.7rem;
+    margin: 0 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid goldenrod;
+    border-radius: 6px;
+}
+
+#refresh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refresh-button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.7rem;
+    margin: 0 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid orangered;
+    border-radius: 6px;
+}
