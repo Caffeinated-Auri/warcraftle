@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
 
 body {
-    background-image: url(images/dragonflight-background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/dragonflight-background.jpg);
 }
 
 .metamorphous-regular {
@@ -10,68 +10,104 @@ body {
     font-style: normal;
 }
 
+#container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 h1 {
     text-align: center;
+    text-transform: uppercase;
     font-family: "Metamorphous", serif;
-    padding: 20px;
-    font-size: 38px;
+    padding-top: 20px;
+    font-size: 42px;
     color: goldenrod;
     text-shadow: 2px 2px 1px rgb(92, 83, 74);
 }
 
-#game-board {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+h2 {
+    text-align: center;
+    font-family: "Metamorphous", serif;
+    font-size: 24px;
+    color: goldenrod;
+
 }
 
-.letter-box {
-    border: 2px solid rgb(151, 150, 147);
-    border-radius: 3px;
-    margin: 2px;
-    font-size: 2.5rem;
-    font-weight: 700;
-    height: 3rem;
-    width: 3rem;
+
+
+#board-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.square {
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: gainsboro;
+    text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
 }
 
-.filled-box {
-    border: 2px solid black;
+#keyboard-container {
+    height: 200px;
 }
 
-.letter-row {
+.keyboard-row {
     display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
 }
 
-#keyboard-cont {
-    margin: 1rem 0;
-    padding-top: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#keyboard-cont div {
-    display: flex;
-}
-
-.second-row {
-    margin: 0.5rem 0;
-}
-
-.keyboard-button {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.7rem;
-    margin: 0 2px;
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
     cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
     text-transform: uppercase;
-    border: 1px solid goldenrod;
-    border-radius: 6px;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+}
+
+.spacer-half {
+    flex-grow: 0.5;
 }
 
 #refresh {
@@ -81,12 +117,31 @@ h1 {
 }
 
 .refresh-button {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.7rem;
-    margin: 0 2px;
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 10px;
+    height: 55px;
     cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
     text-transform: uppercase;
-    border: 1px solid orangered;
-    border-radius: 6px;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.hint-button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 10px;
+    height: 55px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
 }
