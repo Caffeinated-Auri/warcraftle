@@ -28,6 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
             availableSpaceEl.textContent = letter;
         }
     }
+    document.addEventListener("keydown", (event) => {
+        const keyPressed = event.key.toLowerCase();
+
+        if (/^[a-z]$/.test(keyPressed)) {
+            updateGuessedWords(keyPressed);
+        } else if (keyPressed === "enter") {
+            handleSubmitWord();
+        } else if (keyPressed === "backspace") {
+            event.preventDefault(); // Prevent default behavior of backspace key
+            handleDeleteLetter();
+        }
+    });
+
     function getTileColor(letter, index) {
         const isCorrectLetter = word.includes(letter)
         if (!isCorrectLetter) {
@@ -87,6 +100,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function handleDeleteLetter() {
+        const currentWordArr = getCurrentWordArr();
+        // check if current row is not empty and user pressed enter
+        if (currentWordArr.length > 0 && availableSpace > (guessedWordCount * 5)) {
+            const removedLetter = currentWordArr.pop();
+
+            guessedWords[guessedWords.length - 1] = currentWordArr;
+
+            const lastLetterEl = document.getElementById(String(availableSpace - 1));
+
+            lastLetterEl.textContent = "";
+            availableSpace = availableSpace -= 1;
+        }
+    }
     for (let i = 0; i < keys.length; i++) {
         keys[i].onclick = ({ target }) => {
             const letter = target.getAttribute("data-key");
@@ -101,17 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             updateGuessedWords(letter)
         }
-    }
-
-    function handleDeleteLetter() {
-        const currentWordArr = getCurrentWordArr();
-        const removedLetter = currentWordArr.pop();
-
-        guessedWords[guessedWords.length - 1] = currentWordArr;
-
-        const lastLetterEl = document.getElementById(String(availableSpace - 1));
-
-        lastLetterEl.textContent = "";
-        availableSpace = availableSpace - 1;
     }
 });

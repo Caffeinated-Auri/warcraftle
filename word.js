@@ -12,7 +12,7 @@ export const WORDS = [
     'parry',
     'totem',
     'magic',
-    'bleed',
+    'guild',
     'auras',
     'frost',
     'druid',
