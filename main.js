@@ -59,9 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentWordArr = getCurrentWordArr();
         if (currentWordArr.length !== 5) {
             toastr.error("Word must be 5 letters")
+            return
+        }
+        const currentWord = currentWordArr.join("")
+
+        if (!WORDS.includes(currentWord)) {
+            toastr.error("This word is not in the word list")
+            return
         }
 
-        const currentWord = currentWordArr.join("")
 
         const firstLetterId = guessedWordCount * 5 + 1;
         const interval = 200;
