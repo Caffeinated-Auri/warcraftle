@@ -116,7 +116,7 @@ h2 {
     align-items: center;
 }
 
-.refresh-button {
+.hint-button {
     font-family: inherit;
     font-weight: bold;
     border: 0;
@@ -131,7 +131,22 @@ h2 {
     user-select: none;
 }
 
-.hint-button {
+.score-button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 10px;
+    height: 55px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.refresh-button {
     font-family: inherit;
     font-weight: bold;
     border: 0;
