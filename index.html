@@ -66,9 +66,16 @@
   </div>
   <div id="refresh">
     <button class="hint-button">💡Hint</button>
-    <button class="refresh-button">Go Again</button>
+    <button class="score-button" onclick="displayStats()">Stats</button>
+    <button class="refresh-button" onclick="window.location.reload()">Play Again</button>
   </div>
 
+  <div id="statField" style="display: none;">
+    <h2 class="stat-title">Your Warcraftle Statistics:</h2>
+    <h2>Games Played: 1</h2>
+    <h2>Win Streak: 1</h2>
+    <button id="close-button" class="close" onclick="closeStats()">X</button>
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="main.js" type="module"></script>
