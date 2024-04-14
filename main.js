@@ -1,4 +1,4 @@
-import { WORDS, HINTS } from "./word.js";
+import { WORDS } from "./word.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     createSquares()
@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let guessedWords = [[]];
     let availableSpace = 1;
 
-    let word = WORDS[Math.floor(Math.random() * WORDS.length)];
+    const wordOption = WORDS[WORDS.length * Math.random() << 0];
+    const word = wordOption.word;
+    const hint = wordOption.hint;
+
     let guessedWordCount = 0;
 
     const keys = document.querySelectorAll(".keyboard-row button");
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const currentWord = currentWordArr.join("")
 
-        if (!WORDS.includes(currentWord)) {
+        if (!WORDS.map(w => w.word).includes(currentWord)) {
             toastr.error("This word is not in the word list")
             return
         }
@@ -135,6 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
             updateGuessedWords(letter)
         }
     }
+    function displayHint() {
+        toastr.info(`${hint}`)
+    }
+
+    window.displayHint = displayHint;
 });
 
 
