@@ -1,4 +1,4 @@
-import { WORDS } from "./word.js";
+import { WORDS, HINTS } from "./word.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     createSquares()
@@ -136,3 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+
+function displayStats() {
+    const text = document.getElementById("statField");
+    text.style.display = "block";
+};
+
+window.displayStats = displayStats;
+
+function closeStats() {
+    const close = document.getElementById("statField");
+    close.style.display = "none";
+}
+
+window.closeStats = closeStats;
