@@ -26,9 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gamesPlayedDisplay.textContent = gamesPlayed;
     winStreakDisplay.textContent = winStreak;
 
-    // store games played
-    localStorage.setItem("gamesPlayed", Number(gamesPlayed) + 1);
-
     function updateGuessedWords(letter) {
         const currentWordArr = getCurrentWordArr()
 
@@ -82,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
             toastr.error("This word is not in the word list")
             return
         }
-
+        // store games played
+        localStorage.setItem("gamesPlayed", Number(gamesPlayed) + 1);
         const firstLetterId = guessedWordCount * 5 + 1;
         const interval = 200;
         currentWordArr.forEach((letter, index) => {
@@ -162,6 +160,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.displayHint = displayHint;
+
+    // clear storage
+    function clearLocalStorageAndStats() {
+        alert("Resetting your statistics cannot be undone.")
+        localStorage.clear();
+        gamesPlayed = 0;
+        winStreak = 0;
+        gamesPlayedDisplay.textContent = gamesPlayed;
+        winStreakDisplay.textContent = winStreak;
+    }
+
+    window.clearLocalStorageAndStats = clearLocalStorageAndStats;
 });
 
 
@@ -178,3 +188,4 @@ function closeStats() {
 }
 
 window.closeStats = closeStats;
+
