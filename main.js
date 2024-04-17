@@ -5,10 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let guessedWords = [[]];
     let availableSpace = 1;
+    let gamesPlayed = localStorage.getItem("gamesPlayed") || 0;
+    let winStreak = localStorage.getItem("winStreak") || 0;
 
     const wordOption = WORDS[WORDS.length * Math.random() << 0];
     const word = wordOption.word;
     const hint = wordOption.hint;
+    const gamesPlayedDisplay = document.getElementById("games-played");
+    const winStreakDisplay = document.getElementById("win-streak");
 
     let guessedWordCount = 0;
 
@@ -18,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const numberOfGuessedWords = guessedWords.length;
         return guessedWords[numberOfGuessedWords - 1]
     }
+    // initialise game stats and update display
+    gamesPlayedDisplay.textContent = gamesPlayed;
+    winStreakDisplay.textContent = winStreak;
+
+    // store games played
+    localStorage.setItem("gamesPlayed", Number(gamesPlayed) + 1);
 
     function updateGuessedWords(letter) {
         const currentWordArr = getCurrentWordArr()
@@ -42,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault(); // Prevent default behavior of backspace key
             handleDeleteLetter();
         }
+
     });
 
     function getTileColor(letter, index) {
@@ -66,11 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const currentWord = currentWordArr.join("")
 
+        // the map method creates an array using only the words from the WORDS object and iterates over each element to extract the "word" property from each object
         if (!WORDS.map(w => w.word).includes(currentWord)) {
             toastr.error("This word is not in the word list")
             return
         }
-
 
         const firstLetterId = guessedWordCount * 5 + 1;
         const interval = 200;
@@ -82,6 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const letterEl = document.getElementById(letterId)
                 letterEl.classList.add("animate__flipInX");
                 letterEl.style = `background-color:${tileColor};{border-color:${tileColor}}`
+                const keyboardEl = document.querySelector(`[data-key=${letter}]`);
+                keyboardEl.style = `background-color:${tileColor};`
+
             }, interval * index)
         })
 
@@ -89,10 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (currentWord === word) {
             toastr.success("Congrats you got it right!")
+            winStreak++;
+            localStorage.setItem("winStreak", winStreak);
+            gamesPlayedDisplay.textContent = gamesPlayed;
+            winStreakDisplay.textContent = winStreak;
         }
 
         if (guessedWords.length === 6) {
             toastr.error(`You have no more guesses. The word is ${word}`)
+            localStorage.setItem("winStreak", 0)
         }
         guessedWords.push([])
     }
