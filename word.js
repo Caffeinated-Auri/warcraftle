@@ -107,5 +107,26 @@ export const WORDS = [
     {
         word: "magni",
         hint: "azerite"
-    }];
+    },
+    {
+        word: "sword",
+        hint: "slash and stab"
+    },
+    {
+        word: "quest",
+        hint: "progress in the game"
+    },
+    {
+        word: "litch",
+        hint: "wrath of this specific king" // No idea what else to put here XD
+    },
+    {
+        word: "spell",
+        hint: "mage magical magics" // Yeah I'm running out of hint ideas
+    },
+    {
+        word: "sleep", // Not sure if this counts?
+        hint: "gonna take a nap right here"
+    }
+];
 
