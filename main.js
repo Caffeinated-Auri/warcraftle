@@ -79,8 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             toastr.error("This word is not in the word list")
             return
         }
-        // store games played
-        localStorage.setItem("gamesPlayed", Number(gamesPlayed) + 1);
+
         const firstLetterId = guessedWordCount * 5 + 1;
         const interval = 200;
         currentWordArr.forEach((letter, index) => {
@@ -101,10 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (currentWord === word) {
             toastr.success("Congrats you got it right!")
+            // store and set win streak
             winStreak++;
             localStorage.setItem("winStreak", winStreak);
-            gamesPlayedDisplay.textContent = gamesPlayed;
             winStreakDisplay.textContent = winStreak;
+            // store and set games played
+            gamesPlayed++;
+            localStorage.setItem("gamesPlayed", gamesPlayed);
+            gamesPlayedDisplay.textContent = gamesPlayed;
         }
 
         if (guessedWords.length === 6) {
