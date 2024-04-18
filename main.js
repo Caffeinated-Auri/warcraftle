@@ -166,12 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // clear storage
     function clearLocalStorageAndStats() {
-        alert("Resetting your statistics cannot be undone.")
-        localStorage.clear();
-        gamesPlayed = 0;
-        winStreak = 0;
-        gamesPlayedDisplay.textContent = gamesPlayed;
-        winStreakDisplay.textContent = winStreak;
+        if (confirm("Resetting your statistics cannot be undone.")) {
+            localStorage.clear();
+            gamesPlayed = 0;
+            winStreak = 0;
+            gamesPlayedDisplay.textContent = gamesPlayed;
+            winStreakDisplay.textContent = winStreak;
+            initialise()
+        }
     }
 
     window.clearLocalStorageAndStats = clearLocalStorageAndStats;

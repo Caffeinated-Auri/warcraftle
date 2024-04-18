@@ -180,7 +180,7 @@ h2 {
     width: 40px;
     height: 32px;
     font-size: large;
-    font-family: "Metamorphous", serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(80, 51, 8);
     border: none;
 }
@@ -189,6 +189,7 @@ h2 {
     position: relative;
     border-color: black;
     left: 45%;
+    top: 12%;
     cursor: pointer;
 }
 
@@ -204,6 +205,7 @@ h2 {
     color: rgba(255, 255, 255, 0.76);
     border: none;
     padding: 10px;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -273,5 +275,11 @@ h2 {
 @media screen and (min-width: 1201px) {
     html {
         background-position: center;
+    }
+
+    #statField {
+        top: 35%;
+        left: 80%;
+        transform: translate(-50%, -50%);
     }
 }
