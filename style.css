@@ -317,15 +317,9 @@ hr {
     }
 
     #infoField {
-<<<<<<< HEAD
         box-sizing: border-box;
         height: max-content;
-=======
-        top: 60%;
-        height: auto;
->>>>>>> f42acf7 (media query fix)
         width: 350px;
-
     }
 
     #exit-button {
