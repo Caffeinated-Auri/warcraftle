@@ -81,8 +81,8 @@ export const WORDS = [
         hint: "a spell that removes a magical effect"
     },
     {
-        word: "shear",
-        hint: ""
+        word: "level",
+        hint: "you require experience to gain this"
     },
     {
         word: "mount",
@@ -102,10 +102,38 @@ export const WORDS = [
     },
     {
         word: "dwarf",
-        hint: "beards"
+        hint: "short and stout"
     },
     {
         word: "magni",
-        hint: "azerite"
+        hint: "azerite addict"
+    },
+    {
+        word: "haste",
+        hint: "increases attack and spell speed"
+    },
+    {
+        word: "armor",
+        hint: "reduces physical damage taken"
+    },
+    {
+        word: "honor",
+        hint: "a pvp currency"
+    },
+    {
+        word: "raids",
+        hint: "big dungeons with many bosses"
+    },
+    {
+        word: "chest",
+        hint: "there might be treasure inside"
+    },
+    {
+        word: "gnoll",
+        hint: "the hyenas of wow"
+    },
+    {
+        word: "boost",
+        hint: "something you do to help a lower level friend"
     }];
 
