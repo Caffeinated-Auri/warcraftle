@@ -194,3 +194,16 @@ function closeStats() {
 
 window.closeStats = closeStats;
 
+function displayInfo() {
+    const text = document.getElementById("infoField");
+    text.style.display = "block";
+}
+
+window.displayInfo = displayInfo;
+
+function closeInfo() {
+    const exit = document.getElementById("infoField")
+    exit.style.display = "none";
+}
+
+window.closeInfo = closeInfo;

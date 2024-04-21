@@ -12,13 +12,17 @@
 </head>
 
 <body>
-  <div id="container">
-    <div id="game">
-      <header>
-        <h1 class="title">Warcraftle</h1>
-        <h2 class="subtext">A Worldle-based game for WoW</h2>
-      </header>
+  <header>
+    <h1 class="title">Warcraftle</h1>
+    <h2 class="subtext">A Worldle-based game for WoW</h2>
+  </header>
+  <div class="modes">
+    <button class="game-modes">Game Mode</button>
+  </div>
 
+  <div id="container">
+
+    <div id="game">
       <div id="board-container">
         <div id="board"></div>
       </div>
@@ -63,20 +67,64 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="refresh">
-    <button class="hint-button" onclick="displayHint()">💡Hint</button>
-    <button class="score-button" onclick="displayStats()">Stats</button>
-    <button class="refresh-button" onclick="window.location.reload()">Play Again</button>
+    <div class="nav">
+      <div id="refresh">
+        <button class="info-button" onclick="displayInfo()">Info</button>
+        <button class="hint-button" onclick="displayHint()">💡Hint</button>
+        <button class="score-button" onclick="displayStats()">Stats</button>
+        <button class="refresh-button" onclick="window.location.reload()">Play Again</button>
+      </div>
+      <div id="infoField">
+        <h2>How To Play Warcraftle</h2>
+        <hr>
+        <h3>Guess the word in six tries.</h3>
+        <ul>
+          <li>Each of your guesses must be a valid 5-letter word.</li>
+          <li>Only World of Warcraft-based words can be guessed.</li>
+          <li>The color of the tiles change to indicate how close your guess was.</li>
+        </ul>
+        <h3>Examples</h3>
+        <div class="example-1">
+          <span style="background-color: rgb(83, 141, 78);">W</span>
+          <span>R</span>
+          <span>A</span>
+          <span>T</span>
+          <span>H</span>
+          <p><strong>W</strong> is in the word and in the correct position.</p>
+        </div>
+        <div class="example-2">
+          <span>G</span>
+          <span style="background-color: rgb(181, 159, 59);">U</span>
+          <span>I</span>
+          <span>L</span>
+          <span>D</span>
+          <p><strong>U</strong> is in the word and in the wrong position.</p>
+        </div>
+        <div class="example-3">
+          <span>M</span>
+          <span>A</span>
+          <span>G</span>
+          <span>N</span>
+          <span style="background-color: rgb(58, 58, 60);">I</span>
+          <p><strong>I</strong> is not in the current word.</p>
+        </div>
+        <hr>
+        <button id="exit-button" onclick="closeInfo()">X</button>
+      </div>
+
+      <div id="statField">
+        <h2 class=" stat-title">Your Warcraftle Statistics:</h2>
+        <h2>Games Played: <span id="games-played">0</span></h2>
+        <h2>Win Streak: <span id="win-streak">0</span></h2>
+        <button id="close-button" class="close" onclick="closeStats()">X</button>
+        <button id="reset-button" onclick="clearLocalStorageAndStats()">Reset Stats</button>
+
+      </div>
+    </div>
+
+
   </div>
 
-  <div id="statField">
-    <h2 class=" stat-title">Your Warcraftle Statistics:</h2>
-    <h2>Games Played: <span id="games-played">0</span></h2>
-    <h2>Win Streak: <span id="win-streak">0</span></h2>
-    <button id="close-button" class="close" onclick="closeStats()">X</button>
-    <button id="reset-button" onclick="clearLocalStorageAndStats()">Reset Stats</button>
-  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="main.js" type="module"></script>
