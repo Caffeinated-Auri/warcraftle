@@ -353,8 +353,8 @@ hr {
     }
 
     #infoField {
-        height: 650px;
-        width: 370px;
+        height: auto;
+        width: 350px;
     }
 
     #exit-button {
