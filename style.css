@@ -353,8 +353,7 @@ hr {
     }
 
     #infoField {
-        box-sizing: border-box;
-        height: max-content;
+        height: auto;
         width: 350px;
 
     }
