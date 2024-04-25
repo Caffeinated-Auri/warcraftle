@@ -292,7 +292,7 @@ hr {
 
     #infoField {
         width: 300px;
-        height: 95vh;
+        height: 100%;
         top: 55%;
     }
 
@@ -301,7 +301,7 @@ hr {
     }
 
     #exit-button {
-        bottom: 2%;
+        bottom: 5%;
     }
 }
 
@@ -312,7 +312,7 @@ hr {
 
     #infoField {
         width: 80vw;
-        height: 100vh;
+        height: 100%;
         top: 55%;
     }
 
@@ -322,7 +322,7 @@ hr {
 
 
     #exit-button {
-        bottom: 0%;
+        bottom: 5%;
     }
 
 }
@@ -335,7 +335,7 @@ hr {
 
     #infoField {
         width: 80vw;
-        height: 90vh;
+        height: 100%;
         top: 55%;
     }
 
@@ -345,7 +345,7 @@ hr {
 
 
     #exit-button {
-        bottom: 0%;
+        bottom: 5%;
     }
 
 }
@@ -357,7 +357,7 @@ hr {
 
     #infoField {
         width: 80vw;
-        height: 90vh;
+        height: 100%;
         top: 55%;
     }
 
@@ -367,7 +367,7 @@ hr {
 
 
     #exit-button {
-        bottom: 2%;
+        bottom: 5%;
     }
 
 }
@@ -379,7 +379,7 @@ hr {
 
     #infoField {
         width: 80vw;
-        height: 90vh;
+        height: 100%;
         top: 55%;
     }
 
@@ -389,7 +389,7 @@ hr {
 
 
     #exit-button {
-        bottom: 2%;
+        bottom: 5%;
     }
 
 }
@@ -406,13 +406,13 @@ hr {
 
     #infoField {
         width: 80vw;
-        height: 90vh;
+        height: 100%;
         top: 55%;
     }
 
     #exit-button {
         bottom: 5%;
-        bottom: 5%;
+
     }
 }
 
@@ -425,14 +425,13 @@ hr {
     #infoField {
         top: 60%;
         width: 85vw;
-        height: 80vh;
-        width: 85vw;
-        height: 80vh;
+        height: 100%;
+
     }
 
     #exit-button {
-        bottom: 4%;
-        bottom: 4%;
+        bottom: 5%;
+
     }
 }
 
@@ -457,9 +456,6 @@ hr {
     }
 
     #statField {
-        top: 65%;
-        width: 90vw;
-        height: 85vh;
         top: 65%;
         width: 90vw;
         height: 85vh;
