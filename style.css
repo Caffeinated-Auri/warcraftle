@@ -456,9 +456,7 @@ hr {
     }
 
     #statField {
-        top: 65%;
-        width: 90vw;
-        height: 85vh;
-        transform: translate(-50%, -50%);
+        top: 35%;
+        left: 80%;
     }
 }
